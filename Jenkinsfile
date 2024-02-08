@@ -1,11 +1,11 @@
 node('master') {
-
-    stage 'Checkout'
+    stage('Checkout'){
         checkout scm
-    stage 'Build'
+    }
+    stage('Build'){
         // sh "docker build -t jenkinspoc:B${BUILD_NUMBER} -f Dockerfile ."
         sh "docker-compose -f ./docker-compose.integration.yml up"
-
+    }
     // stage 'Pusblish UT Reports'
     //     containerID = sh (
     //         script: "docker run -d jenkinspoc:B${BUILD_NUMBER}", 
