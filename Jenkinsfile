@@ -3,8 +3,8 @@ node('master') {
         checkout scm
     }
     stage('Build'){
-        // sh "docker build -t jenkinspoc:B${BUILD_NUMBER} -f Dockerfile ."
-        sh "docker-compose -f ./docker-compose.integration.yml up"
+        sh "docker build -t jenkinspoc:${BUILD_NUMBER} -f Dockerfile ./JenkinsPoc"
+        // sh "docker-compose -f ./docker-compose.integration.yml up"
     }
     // stage 'Pusblish UT Reports'
     //     containerID = sh (
