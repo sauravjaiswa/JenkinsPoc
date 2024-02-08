@@ -3,6 +3,7 @@ node('master') {
         checkout scm
     }
     stage('Build'){
+        sh "sudo systemctl start docker"
         sh "docker build -t jenkinspoc:${BUILD_NUMBER} -f Dockerfile ./JenkinsPoc"
         // sh "docker-compose -f ./docker-compose.integration.yml up"
     }
