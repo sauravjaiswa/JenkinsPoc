@@ -4,6 +4,6 @@ services:
   jenkinspoc:
     image: "jenkinspoc:B${BUILD_NUMBER}"
     build:
-      context: .
+      context: ./JenkinsPoc
 volumes:
     dbdata:
